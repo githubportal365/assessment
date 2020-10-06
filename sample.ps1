@@ -1,9 +1,9 @@
-$path = "C:\Temp\Process.csv"
+$path = ".\Process.csv"
 $header ="UserID","FirstLastName","Version","InsuranceCompany"
 
 
 
-import-csv -path $path -header $header| sort UserID,FirstLastName,InsuranceCompany | export-CSV c:\Temp\outfile.csv -UseCulture -Encoding UTF8
+import-csv -path $path -header $header| sort FirstLastName | export-CSV c:\Temp\outfile.csv -UseCulture -Encoding UTF8
 $csv = Import-Csv c:\Temp\outfile.csv
 
 foreach($line in $csv)
@@ -16,7 +16,7 @@ foreach($line in $csv)
 					$filenam=$columnvalue
 						if ($column -like "*Insurance*")  
 							{
-								Add-Content C:\Temp\$filenam.txt  $properties
+								Add-Content .\$filenam.txt  $properties
 								
 							}     
         				# doSomething $i $columnvalue 
