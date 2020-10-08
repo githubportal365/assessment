@@ -3,8 +3,8 @@ $header ="UserID","FirstLastName","Version","InsuranceCompany"
 
 
 
-import-csv -path $path -header $header| sort FirstLastName | export-CSV c:\Temp\outfile.csv -UseCulture -Encoding UTF8
-$csv = Import-Csv c:\Temp\outfile.csv
+import-csv -path $path -header $header| sort FirstLastName | export-CSV .\outfile.csv -UseCulture -Encoding UTF8
+$csv = Import-Csv .\outfile.csv
 
 foreach($line in $csv)
 	{ 
